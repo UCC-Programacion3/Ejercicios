@@ -1,6 +1,6 @@
 #include "MazeGenerator.h"
 
-// #include <chrono>
+#include <chrono>
 #include <random>
 
 MazeGenerator::MazeGenerator(unsigned int ancho, unsigned int alto) {
@@ -19,8 +19,12 @@ MazeGenerator::MazeGenerator(unsigned int ancho, unsigned int alto) {
 
   // Lleno la matriz
   maze = new int *[this->w];
-  for (int i = 0; i < this->w; i++)
+  for (int i = 0; i < this->w; i++) {
     maze[i] = new int[this->h];
+    for (int j = 0; j < this->h; j++) {
+      maze[i][j] = 0;
+    }
+  }
 
   generateMaze(0, 0);
 }
@@ -31,25 +35,13 @@ MazeGenerator::~MazeGenerator() {
 
   delete maze;
 }
-
-void MazeGenerator::display() {
-  for (int i = 0; i < h; i++) {
-    // draw the north edge
-    for (int j = 0; j < w; j++) {
-      cout << ((maze[j][i] & 1) == 0 ? "+---" : "+   ");
+void MazeGenerator::reGenerate() {
+  for (int i = 0; i < this->w; i++) {
+    for (int j = 0; j < this->h; j++) {
+      maze[i][j] = 0;
     }
-    cout << ("+") << endl;
-    // draw the west edge
-    for (int j = 0; j < w; j++) {
-      cout << ((maze[j][i] & 8) == 0 ? "|   " : "    ");
-    }
-    cout << ("|") << endl;
   }
-  // draw the bottom line
-  for (int j = 0; j < w; j++) {
-    cout << ("+---");
-  }
-  cout << ("+") << endl;
+  generateMaze(0, 0);
 }
 
 void MazeGenerator::generateMaze(int cx, int cy) {

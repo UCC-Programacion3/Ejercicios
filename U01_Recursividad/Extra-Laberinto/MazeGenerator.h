@@ -1,5 +1,5 @@
-#ifndef U01_RECURSIVIDAD_EX_LABERINTO_MAZEGENERATOR_H_
-#define U01_RECURSIVIDAD_EX_LABERINTO_MAZEGENERATOR_H_
+#ifndef U01_RECURSIVIDAD_EXTRA_LABERINTO_MAZEGENERATOR_H_
+#define U01_RECURSIVIDAD_EXTRA_LABERINTO_MAZEGENERATOR_H_
 
 #include <algorithm>
 #include <iostream>
@@ -48,11 +48,11 @@ public:
 
   void visitar(unsigned x, unsigned y);
 
-  void display();
+  void reGenerate();
 
   unsigned int getW() const;
 
   unsigned int getH() const;
 };
 
-#endif // U01_RECURSIVIDAD_EX_LABERINTO_MAZEGENERATOR_H_
+#endif // U01_RECURSIVIDAD_EXTRA_LABERINTO_MAZEGENERATOR_H_

@@ -10,18 +10,33 @@ add_executable(U01-E04 Ej-04/main.cpp Ej-04/mcd.cpp)
 add_executable(U01-E05 Ej-05/main.cpp Ej-05/digitos.cpp)
 
 
-
-find_package(Qt5Widgets REQUIRED)
-
-
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/test/cmake_modules" ${CMAKE_MODULE_PATH})
-find_package(SFML 2 REQUIRED graphics window system)
+find_package( Threads )
 
 
-add_executable(Laberinto Ex-Laberinto/main.cpp Ex-Laberinto/MazeGenerator.h Ex-Laberinto/LaberintoSolver.cpp Ex-Laberinto/LaberintoSolver.h Ex-Laberinto/MazeGenerator.cpp)
+set(SFML_VERSION "2.5.1")
+find_package(SFML ${SFML_VERSION} COMPONENTS system window graphics)
 
-target_link_libraries(Laberinto Qt5::Widgets)
-file(COPY Ex-Laberinto/tileLab.png DESTINATION ${CMAKE_BINARY_DIR}/U01_Recursividad/)
+if (NOT SFML_FOUND)
+    include(FetchContent)
+    FetchContent_Declare(
+        sfml
+        URL https://github.com/SFML/SFML/releases/download/${SFML_VERSION}/SFML-${SFML_VERSION}-sources.zip
+    )
+
+    FetchContent_GetProperties(sfml)
+    if(NOT sfml_POPULATED)
+        set(FETCHCONTENT_QUIET NO)
+        FetchContent_Populate(sfml)
+        add_subdirectory(${sfml_SOURCE_DIR} ${sfml_BINARY_DIR})
+    endif()
+endif()
+
+
+
+add_executable(Laberinto Extra-Laberinto/main.cpp Extra-Laberinto/LaberintoSolver.cpp Extra-Laberinto/MazeGenerator.cpp)
+
+target_link_libraries(Laberinto ${CMAKE_THREAD_LIBS_INIT} sfml-system sfml-window sfml-graphics)
+file(COPY Extra-Laberinto/tileLab.png DESTINATION ${CMAKE_BINARY_DIR}/U01_Recursividad/)
 
 #if(SFML_FOUND)
 #    include_directories(${SFML_INCLUDE_DIR})
