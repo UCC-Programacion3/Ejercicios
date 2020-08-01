@@ -1,5 +1,5 @@
-#ifndef LISTA_H
-#define LISTA_H
+#ifndef U01_RECURSIVIDAD_EX_LABERINTO_PILA_H_
+#define U01_RECURSIVIDAD_EX_LABERINTO_PILA_H_
 
 /**
  * Clase que implementa una Pila generica, ya que puede
@@ -9,78 +9,68 @@
 
 #include "Nodo.h"
 
-template<class T>
-class Pila {
+template <class T> class Pila {
 private:
-    Nodo<T> *inicio;
+  Nodo<T> *inicio;
+
 public:
-    Pila();
+  Pila();
 
-    ~Pila();
+  ~Pila();
 
-    void push(T dato);
+  void push(T dato);
 
-    T pop();
+  T pop();
 
-    bool esVacia();
+  bool esVacia();
 
-    T peek() { return inicio->getDato(); }
+  T peek() { return inicio->getDato(); }
 };
-
 
 /**
  * Constructor de la clase Pila
  * @tparam T
  */
-template<class T>
-Pila<T>::Pila() {
-    inicio = NULL;
-}
-
+template <class T> Pila<T>::Pila() { inicio = NULL; }
 
 /**
- * Destructor de la clase Lista, se encarga de liberar la memoria de todos los nodos
- * utilizados en la lista
+ * Destructor de la clase Lista, se encarga de liberar la memoria de todos los
+ * nodos utilizados en la lista
  * @tparam T
  */
-template<class T>
-Pila<T>::~Pila() {
-    while (!esVacia()) {
-        pop();
-    }
+template <class T> Pila<T>::~Pila() {
+  while (!esVacia()) {
+    pop();
+  }
 }
-
 
 /**
  * Inserta un dato en la pila
  * @tparam T
  * @param dato  dato a insertar
  */
-template<class T>
-void Pila<T>::push(T dato) {
-    auto *aux = new Nodo<T>(dato, inicio);
-    inicio = aux;
-    // inicio  = new Nodo(dato, inicio);
+template <class T> void Pila<T>::push(T dato) {
+  auto *aux = new Nodo<T>(dato, inicio);
+  inicio = aux;
+  // inicio  = new Nodo(dato, inicio);
 }
-
 
 /**
  * Obtener el dato de la pila
  * @tparam T
  * @return dato almacenado en el nodo
  */
-template<class T>
-T Pila<T>::pop() {
-    if (esVacia())
-        throw 1;
+template <class T> T Pila<T>::pop() {
+  if (esVacia())
+    throw 1;
 
-    T dato = inicio->getDato();
-    Nodo<T> *aux = inicio;
+  T dato = inicio->getDato();
+  Nodo<T> *aux = inicio;
 
-    inicio = inicio->getNext();
-    delete aux;
+  inicio = inicio->getNext();
+  delete aux;
 
-    return dato;
+  return dato;
 }
 
 /**
@@ -88,9 +78,6 @@ T Pila<T>::pop() {
  * @tparam T
  * @return
  */
-template<class T>
-bool Pila<T>::esVacia() {
-    return inicio == NULL;
-}
+template <class T> bool Pila<T>::esVacia() { return inicio == NULL; }
 
-#endif //LISTA_H
+#endif // U01_RECURSIVIDAD_EX_LABERINTO_PILA_H_

@@ -9,17 +9,17 @@ apunta al siguiente nodo de la lista.
 
 ## Clase
 
-#### Metodos:
+### Metodos
 
 Constructor()
 Constructor(Lista) // Por copia
 
-esVacia()  
-getTamanio()  
-insertar(posicion, dato)  
-insertarPrimero(dato)  
-insertarUltimo(dato)  
-remover(posicion)  
-getDato(posicion)  
-reemplazar(posicion, dato)  
+esVacia()
+getTamanio()
+insertar(posicion, dato)
+insertarPrimero(dato)
+insertarUltimo(dato)
+remover(posicion)
+getDato(posicion)
+reemplazar(posicion, dato)
 vaciar()

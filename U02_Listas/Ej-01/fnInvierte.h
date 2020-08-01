@@ -1,16 +1,9 @@
 #include "../Lista/Lista.h"
-#ifndef FNINVIERTE_H
-#define FNINVIERTE_H
+#ifndef U02_LISTAS_EJ_01_FNINVIERTE_H_
+#define U02_LISTAS_EJ_01_FNINVIERTE_H_
 
+template <class T> void fnInvierte(Lista<T> *lis);
 
-template <class T>
-void fnInvierte (Lista<T> *lis);
+template <class T> void fnInvierte(Lista<T> *lis) {}
 
-
-template <class T>
-void fnInvierte (Lista<T> *lis){
-
-}
-
-
-#endif //FNINVIERTE_H
+#endif // U02_LISTAS_EJ_01_FNINVIERTE_H_

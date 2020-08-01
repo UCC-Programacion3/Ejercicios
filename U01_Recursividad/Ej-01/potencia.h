@@ -1,8 +1,6 @@
-#ifndef POTENCIA_H
-#define POTENCIA_H
-
+#ifndef U01_RECURSIVIDAD_EJ_01_POTENCIA_H_
+#define U01_RECURSIVIDAD_EJ_01_POTENCIA_H_
 
 unsigned int potencia(unsigned int base, unsigned int exp);
 
-
-#endif //INC_01_RECURSIVIDAD_POTENCIA_H
+#endif // U01_RECURSIVIDAD_EJ_01_POTENCIA_H_

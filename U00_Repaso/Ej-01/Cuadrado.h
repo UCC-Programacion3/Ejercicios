@@ -1,10 +1,6 @@
-#ifndef REPASO_CUADRADO_H
-#define REPASO_CUADRADO_H
+#ifndef U00_REPASO_EJ_01_CUADRADO_H_
+#define U00_REPASO_EJ_01_CUADRADO_H_
 
+class Cuadrado {};
 
-class Cuadrado {
-
-};
-
-
-#endif //REPASO_CUADRADO_H
+#endif // U00_REPASO_EJ_01_CUADRADO_H_

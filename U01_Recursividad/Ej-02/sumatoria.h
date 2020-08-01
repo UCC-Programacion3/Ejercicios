@@ -1,7 +1,6 @@
-#ifndef SUMATORIA_H
-#define SUMATORIA_H
-
+#ifndef U01_RECURSIVIDAD_EJ_02_SUMATORIA_H_
+#define U01_RECURSIVIDAD_EJ_02_SUMATORIA_H_
 
 int sumatoria(int *arr, unsigned int size);
 
-#endif //INC_01_RECURSIVIDAD_SUMATORIA_H
+#endif // U01_RECURSIVIDAD_EJ_02_SUMATORIA_H_

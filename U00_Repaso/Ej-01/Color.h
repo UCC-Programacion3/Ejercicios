@@ -1,10 +1,6 @@
-#ifndef REPASO_COLOR_H
-#define REPASO_COLOR_H
+#ifndef U00_REPASO_EJ_01_COLOR_H_
+#define U00_REPASO_EJ_01_COLOR_H_
 
+class Color {};
 
-class Color {
-
-};
-
-
-#endif //REPASO_COLOR_H
+#endif // U00_REPASO_EJ_01_COLOR_H_

@@ -1,7 +1,15 @@
 project(test)
 
-add_subdirectory(lib/gtest-1.8.1)
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+# install googletests
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        release-1.10.0
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+FetchContent_MakeAvailable(googletest)
+
 
 add_executable(run_test
 

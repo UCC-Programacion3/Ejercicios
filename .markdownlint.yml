@@ -1,0 +1,8 @@
+default: true
+
+MD004: 'sublist'
+MD012:
+  maximum: 3
+MD013:
+  line_length: 150
+MD033: false

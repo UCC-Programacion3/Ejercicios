@@ -1,10 +1,6 @@
-#ifndef REPASO_CIRCULO_H
-#define REPASO_CIRCULO_H
+#ifndef U00_REPASO_EJ_01_CIRCULO_H_
+#define U00_REPASO_EJ_01_CIRCULO_H_
 
+class Circulo {};
 
-class Circulo {
-
-};
-
-
-#endif //REPASO_CIRCULO_H
+#endif // U00_REPASO_EJ_01_CIRCULO_H_

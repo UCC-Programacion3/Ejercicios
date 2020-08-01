@@ -1,6 +1,3 @@
-#include "sumatoria.h"
+#include "./sumatoria.h"
 
-
-int sumatoria(int *arr, unsigned int size) {
-    return 0;
-}
+int sumatoria(int *arr, unsigned int size) { return 0; }

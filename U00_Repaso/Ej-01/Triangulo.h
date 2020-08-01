@@ -1,10 +1,6 @@
-#ifndef REPASO_TRIANGULO_H
-#define REPASO_TRIANGULO_H
+#ifndef U00_REPASO_EJ_01_TRIANGULO_H_
+#define U00_REPASO_EJ_01_TRIANGULO_H_
 
+class Triangulo {};
 
-class Triangulo {
-
-};
-
-
-#endif //REPASO_TRIANGULO_H
+#endif // U00_REPASO_EJ_01_TRIANGULO_H_

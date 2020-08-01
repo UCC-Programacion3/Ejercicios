@@ -1,5 +1,5 @@
-#ifndef LaberintoSolver_H
-#define LaberintoSolver_H
+#ifndef U01_RECURSIVIDAD_EX_LABERINTO_LABERINTOSOLVER_H_
+#define U01_RECURSIVIDAD_EX_LABERINTO_LABERINTOSOLVER_H_
 
 #include "MazeGenerator.h"
 
@@ -10,17 +10,16 @@ typedef void (*Funcion)(unsigned x, unsigned y, int valor);
 
 class LaberintoSolver {
 private:
-    Funcion pintar;
-    MazeGenerator *m;
-    unsigned w, h;
+  Funcion pintar;
+  MazeGenerator *m;
+  unsigned w, h;
 
 public:
+  LaberintoSolver(Funcion callback, MazeGenerator *m);
 
-    LaberintoSolver(Funcion callback, MazeGenerator *m);
+  bool solve(unsigned x, unsigned y);
 
-    bool solve(unsigned x, unsigned y);
-
-    void run();
+  void run();
 };
 
-#endif
+#endif // U01_RECURSIVIDAD_EX_LABERINTO_LABERINTOSOLVER_H_

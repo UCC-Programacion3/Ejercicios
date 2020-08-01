@@ -1,13 +1,10 @@
 #include "../Lista/Lista.h"
 
-#ifndef UNION_H
-#define UNION_H
+#ifndef U02_LISTAS_EJ_04_UNION_H_
+#define U02_LISTAS_EJ_04_UNION_H_
 
-
-template<class T>
-Lista<T> *unir(Lista<T> &lisA, Lista<T> &lisB) {
-    return new Lista<T>();
+template <class T> Lista<T> *unir(const Lista<T> &lisA, const Lista<T> &lisB) {
+  return new Lista<T>();
 }
 
-
-#endif //UNION_H
+#endif // U02_LISTAS_EJ_04_UNION_H_

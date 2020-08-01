@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="U07_Ej02_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" folderName="U07-Grafos" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Programacion3" TARGET_NAME="run_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Programacion3" RUN_TARGET_NAME="run_test" TEST_CLASS="U07_Ej02_test" TEST_MODE="SUITE_TEST">
+  <configuration default="false" name="U07_Ej02_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" folderName="U07 Grafos" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Programacion3" TARGET_NAME="run_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Programacion3" RUN_TARGET_NAME="run_test" TEST_CLASS="U07_Ej02_test" TEST_MODE="SUITE_TEST">
     <method v="2">
       <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       <option name="BeforeTestRunTask" enabled="true" />

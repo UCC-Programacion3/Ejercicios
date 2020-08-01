@@ -1,10 +1,6 @@
-#ifndef REPASO_ENTERO_H
-#define REPASO_ENTERO_H
+#ifndef U00_REPASO_EJ_05_ENTERO_H_
+#define U00_REPASO_EJ_05_ENTERO_H_
 
+class Entero {};
 
-class Entero {
-
-};
-
-
-#endif //REPASO_ENTERO_H
+#endif // U00_REPASO_EJ_05_ENTERO_H_

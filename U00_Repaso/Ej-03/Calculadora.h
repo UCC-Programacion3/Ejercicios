@@ -1,10 +1,6 @@
-#ifndef REPASO_CALCULADORA_H
-#define REPASO_CALCULADORA_H
+#ifndef U00_REPASO_EJ_03_CALCULADORA_H_
+#define U00_REPASO_EJ_03_CALCULADORA_H_
 
+class Calculadora {};
 
-class Calculadora {
-
-};
-
-
-#endif //REPASO_CALCULADORA_H
+#endif // U00_REPASO_EJ_03_CALCULADORA_H_

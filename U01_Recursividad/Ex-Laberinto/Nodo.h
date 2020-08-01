@@ -1,39 +1,28 @@
-#ifndef NODO_H_H
-#define NODO_H_H
+#ifndef U01_RECURSIVIDAD_EX_LABERINTO_NODO_H_
+#define U01_RECURSIVIDAD_EX_LABERINTO_NODO_H_
 
 #include <iostream>
 
-template<class T>
-class Nodo {
+template <class T> class Nodo {
 private:
-    T dato;
-    Nodo<T> *next;
+  T dato;
+  Nodo<T> *next;
+
 public:
-    Nodo(T dato) {
-        this->dato = dato;
-        next = NULL;
-    }
+  explicit Nodo(T dato) {
+    this->dato = dato;
+    next = NULL;
+  }
 
-    Nodo(T dato, Nodo<T> *next) : dato(dato), next(next) {}
+  Nodo(T dato, Nodo<T> *next) : dato(dato), next(next) {}
 
-    T getDato() const {
-        return dato;
-    }
+  T getDato() const { return dato; }
 
-    void setDato(T dato) {
-        Nodo::dato = dato;
-    }
+  void setDato(T dato) { Nodo::dato = dato; }
 
-    Nodo<T> *getNext() const {
-        return next;
-    }
+  Nodo<T> *getNext() const { return next; }
 
-    void setNext(Nodo<T> *next) {
-        Nodo::next = next;
-    }
-
-
+  void setNext(Nodo<T> *next) { Nodo::next = next; }
 };
 
-
-#endif //INC_02_LISTAS_NODO_H_H
+#endif // U01_RECURSIVIDAD_EX_LABERINTO_NODO_H_

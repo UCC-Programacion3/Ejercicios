@@ -1,10 +1,6 @@
-#ifndef CIRCLIST_H
-#define CIRCLIST_H
+#ifndef U02_LISTAS_EJ_05_CIRCLIST_H_
+#define U02_LISTAS_EJ_05_CIRCLIST_H_
 
+class CircList {};
 
-class CircList {
-
-};
-
-
-#endif //CIRCLIST_H
+#endif // U02_LISTAS_EJ_05_CIRCLIST_H_
