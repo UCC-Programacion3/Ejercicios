@@ -7,20 +7,22 @@
 
 using namespace sf;
 
-void setTexture(const MazeGenerator &m, const Texture &texture, Sprite *tiles);
-void dibujarSolucion(const RenderWindow &w, int *s, CircleShape *c);
+void setTexture(MazeGenerator &m, const Texture &texture, Sprite *tiles);
+void dibujarSolucion(RenderWindow &w, int *s, CircleShape *c);
 
 void delay(__useconds_t ms);
 
 // Constantes para modificar visualización
-void tilesPosition(const MazeGenerator &m, Sprite *tiles);
+void tilesPosition(MazeGenerator &m, Sprite *tiles);
 #define ANCHO 50
 #define ALTO 30
 #define RADIO 8
+#define DELAY 20
 
 int main(int argc, char **argv) {
   auto *m = new MazeGenerator(ANCHO, ALTO);
   int solucion[ANCHO * ALTO];
+  int delay = DELAY;
 
   /// Lleno de 0 el arreglo solución
   std::fill(std::begin(solucion), std::end(solucion), 0);
@@ -53,14 +55,18 @@ int main(int argc, char **argv) {
   tilesPosition(*m, tiles);
 
   // Inicio el solver
-  auto solving = std::async(std::launch::async, solve, m, solucion, 0, 0);
+  auto solving =
+      std::async(std::launch::async, solve, m, solucion, &delay, 0, 0);
 
   w.setFramerateLimit(60);
   while (w.isOpen()) {
     Event e{};
     while (w.pollEvent(e)) {
-      if (e.type == Event::Closed)
+      if (e.type == Event::Closed) {
+        delay = 0;
         w.close();
+      }
+
       if (e.type == Event::KeyPressed && e.key.code == Keyboard::Space) {
         std::cout << "Apreté espacio" << std::endl;
         if (solving.wait_for(std::chrono::seconds(0)) ==
@@ -71,7 +77,8 @@ int main(int argc, char **argv) {
           tilesPosition(*m, tiles);
           std::fill(std::begin(solucion), std::end(solucion), 0);
 
-          solving = std::async(std::launch::async, solve, m, solucion, 0, 0);
+          solving =
+              std::async(std::launch::async, solve, m, solucion, &delay, 0, 0);
         }
       }
     }
@@ -88,7 +95,7 @@ int main(int argc, char **argv) {
   }
   return 0;
 }
-void tilesPosition(const MazeGenerator &m, Sprite *tiles) {
+void tilesPosition(MazeGenerator &m, Sprite *tiles) {
   for (int colum = 0; colum < ALTO; ++colum) {
     for (int fila = 0; fila < ANCHO; ++fila) {
       int spPos = m.getData(fila, colum);
@@ -110,7 +117,7 @@ void delay(__useconds_t ms) {}
  * Función para dibujar el laberinto
  * @param m
  */
-void setSprites(const MazeGenerator &m, Sprite *tiles) {
+void setSprites(MazeGenerator &m, Sprite *tiles) {
   for (int colum = 0; colum < ALTO; ++colum) {
     for (int fila = 0; fila < ANCHO; ++fila) {
       int spPos = m.getData(fila, colum);
@@ -121,7 +128,7 @@ void setSprites(const MazeGenerator &m, Sprite *tiles) {
   }
 }
 
-void dibujarSolucion(const RenderWindow &w, int *sol, CircleShape *cir) {
+void dibujarSolucion(RenderWindow &w, int *sol, CircleShape *cir) {
 
   for (int fila = 0; fila < ANCHO; ++fila) {
     for (int colum = 0; colum < ALTO; ++colum) {

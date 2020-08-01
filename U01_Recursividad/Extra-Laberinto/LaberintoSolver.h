@@ -3,6 +3,7 @@
 
 #include "MazeGenerator.h"
 
-bool solve(MazeGenerator *m, int solucion[], unsigned x, unsigned y);
+bool solve(MazeGenerator *m, int solucion[], int *delay, unsigned x,
+           unsigned y);
 
 #endif // U01_RECURSIVIDAD_EXTRA_LABERINTO_LABERINTOSOLVER_H_
