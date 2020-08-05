@@ -10,8 +10,6 @@ using namespace sf;
 void setTexture(MazeGenerator &m, const Texture &texture, Sprite *tiles);
 void dibujarSolucion(RenderWindow &w, int *s, CircleShape *c);
 
-void delay(__useconds_t ms);
-
 // Constantes para modificar visualización
 void tilesPosition(MazeGenerator &m, Sprite *tiles);
 #define ANCHO 50
@@ -106,12 +104,6 @@ void tilesPosition(MazeGenerator &m, Sprite *tiles) {
     }
   }
 }
-
-/**
- * Función para dormir Xms
- * @param ms
- */
-void delay(__useconds_t ms) {}
 
 /**
  * Función para dibujar el laberinto
